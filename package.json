@@ -12,6 +12,17 @@
     "start": "node dist",
     "test": "jest"
   },
+  "lint-staged": {
+    "*.ts": [
+      "eslint",
+      "jest --findRelatedTests --coverage"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "express": "^4.17.1"
   },
@@ -31,7 +42,9 @@
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.21.2",
+    "husky": "^4.2.5",
     "jest": "^26.1.0",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "regenerator-runtime": "^0.13.5",
     "ts-jest": "^26.1.1",
